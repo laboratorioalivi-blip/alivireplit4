@@ -1,0 +1,77 @@
+═══════════════════════════════════════════════════════════════
+   COMO FAZER DEPLOY NO RENDER - Passo a Passo
+═══════════════════════════════════════════════════════════════
+
+📋 PREPARAÇÃO (O que já está pronto)
+   ✅ Arquivos de configuração criados (render.yaml e .node-version)
+   ✅ Scripts de build e start configurados
+   ✅ Projeto testado e funcionando
+
+═══════════════════════════════════════════════════════════════
+
+🚀 PASSO A PASSO PARA COLOCAR NO AR:
+
+1️⃣ CRIAR CONTA NO RENDER
+   • Acesse: https://render.com
+   • Clique em "Get Started for Free"
+   • Faça login com GitHub (recomendado) ou email
+
+2️⃣ CONECTAR SEU REPOSITÓRIO GITHUB
+   • No painel do Render, clique em "New +"
+   • Escolha "Blueprint"
+   • Clique em "Connect" no seu repositório do GitHub
+   • Se não aparecer, clique em "Configure account" para dar permissão
+
+3️⃣ DEPLOY AUTOMÁTICO
+   • O Render vai detectar o arquivo render.yaml automaticamente
+   • Ele vai criar 2 serviços:
+     - dental-lab-db (banco de dados PostgreSQL)
+     - dental-lab-app (seu site)
+   • Clique em "Apply" para começar
+
+4️⃣ AGUARDAR O DEPLOY
+   • O Render vai:
+     ✓ Instalar as dependências (npm install)
+     ✓ Fazer o build do site (npm run build)
+     ✓ Criar o banco de dados PostgreSQL
+     ✓ Iniciar o servidor (npm start)
+   • Isso leva uns 5-10 minutos
+
+5️⃣ SITE NO AR! 🎉
+   • Quando terminar, você terá uma URL tipo:
+     https://dental-lab-app.onrender.com
+   • Clique na URL para acessar seu site
+
+═══════════════════════════════════════════════════════════════
+
+⚠️ IMPORTANTE - LIMITAÇÕES DO PLANO GRÁTIS:
+
+• 🛌 O site "dorme" após 15 minutos sem uso
+• ⏱️ Demora ~50 segundos para "acordar" no primeiro acesso
+• 🗑️ O banco de dados expira após 90 dias sem uso
+• 💾 Limite de 1GB de armazenamento no banco
+
+═══════════════════════════════════════════════════════════════
+
+📝 CREDENCIAIS DE ACESSO (já configuradas):
+
+Admin do Laboratório:
+   URL: https://seu-site.onrender.com/admin/login
+   Usuário: admin
+   Senha: admin123
+
+═══════════════════════════════════════════════════════════════
+
+🔧 SE DER ALGUM PROBLEMA:
+
+1. No painel do Render, vá em "Logs" para ver o que deu errado
+2. Verifique se os 2 serviços foram criados (app e database)
+3. Certifique-se que o banco está "Live" antes do app iniciar
+
+═══════════════════════════════════════════════════════════════
+
+💡 DICA: Mantenha o site "acordado"
+   Use um serviço como UptimeRobot (grátis) para fazer ping
+   no seu site a cada 5 minutos e evitar que ele durma.
+
+═══════════════════════════════════════════════════════════════
