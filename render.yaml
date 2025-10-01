@@ -1,18 +1,13 @@
-services:
-  # Banco de dados PostgreSQL
-  - type: pserv
-    name: dental-lab-db
-    env: docker
-    plan: free
-    region: oregon
+databases:
+  - name: dental-lab-db
     databaseName: dentallab
-    databaseUser: dentallab_user
+    user: dentallab_user
+    plan: free
 
-  # Aplicação Web (Frontend + Backend)
+services:
   - type: web
     name: dental-lab-app
     env: node
-    region: oregon
     plan: free
     buildCommand: npm install && npm run build
     startCommand: npm start
