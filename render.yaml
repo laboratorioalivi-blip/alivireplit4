@@ -9,7 +9,7 @@ services:
     name: dental-lab-app
     runtime: node
     plan: free
-    buildCommand: npm install --include=dev && npm run build
+    buildCommand: npm install --include=dev && npm run build && npm run db:push
     startCommand: npm start
     envVars:
       - key: NODE_ENV
@@ -18,3 +18,5 @@ services:
         fromDatabase:
           name: dental-lab-db
           property: connectionString
+      - key: SESSION_SECRET
+        generateValue: true
